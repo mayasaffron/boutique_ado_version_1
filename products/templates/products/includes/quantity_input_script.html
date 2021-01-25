@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-// increment quantity 
+// Disable +/- buttons outside the range of 1-99 
 
 function handleEnableDisable (itemId){
     var currentValue = parseInt($(`#id_qty_${itemId}`).val());
@@ -10,12 +10,15 @@ function handleEnableDisable (itemId){
     $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled)
 }
 
+// ensure proper enabling/disabling of all inputs on page load 
+
 var allQtyInputs = $('.qty_input');
 for (var i = 0; i < allQtyInputs.length; i++){
     var itemId = $(allQtyInputs[i]).data('item_id');
     handleEnableDisable(itemId);
 }
 
+// check enable/ disable everytime the input it changed 
 $('.qty_input').change(function(){
     var itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
@@ -40,5 +43,8 @@ $('.qty_input').change(function(){
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
+
+
+    
 
 </script>
