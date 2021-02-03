@@ -24,5 +24,5 @@ class StripeWH_Handler:
         stripe
         '''
         return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
+            content=f'you got no money! Webhook received: {event["type"]}',
             status=200)
