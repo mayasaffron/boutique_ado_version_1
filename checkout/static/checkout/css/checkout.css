@@ -36,6 +36,16 @@
     border: 1px solid #000;
 }
 
+select, select option{
+    color: black;
+
+}
+
+select:invalid,
+select option[value=""]{
+    color: gray;
+}
+
 #loading-overlay {
 	position: fixed;
     top: 0;
